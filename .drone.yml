@@ -34,51 +34,6 @@ steps:
     build_args:
       - NC_VERSION=fpm-alpine
 
-- name: nextcloud 23
-  image: plugins/docker
-  when:
-    branch:
-    - master
-  settings:
-    repo: yavook/kiwi-nextcloud
-    tags: 23
-    username:
-      from_secret: DOCKER_USERNAME
-    password:
-      from_secret: DOCKER_PASSWORD
-    build_args:
-      - NC_VERSION=23-fpm-alpine
-
-- name: nextcloud 24
-  image: plugins/docker
-  when:
-    branch:
-    - master
-  settings:
-    repo: yavook/kiwi-nextcloud
-    tags: 24
-    username:
-      from_secret: DOCKER_USERNAME
-    password:
-      from_secret: DOCKER_PASSWORD
-    build_args:
-      - NC_VERSION=24-fpm-alpine
-
-- name: nextcloud 25
-  image: plugins/docker
-  when:
-    branch:
-    - master
-  settings:
-    repo: yavook/kiwi-nextcloud
-    tags: 25
-    username:
-      from_secret: DOCKER_USERNAME
-    password:
-      from_secret: DOCKER_PASSWORD
-    build_args:
-      - NC_VERSION=25-fpm-alpine
-
 - name: nextcloud 26
   image: plugins/docker
   when:
@@ -154,16 +109,29 @@ steps:
     build_args:
       - NC_VERSION=30-fpm-alpine
 
+- name: nextcloud 31
+  image: plugins/docker
+  when:
+    branch:
+    - master
+  settings:
+    repo: yavook/kiwi-nextcloud
+    tags: 31
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
+    build_args:
+      - NC_VERSION=31-fpm-alpine
+
 - name: parallelism provider
   image: alpine
   depends_on:
     - nextcloud stable
     - nextcloud latest
-    - nextcloud 23
-    - nextcloud 24
-    - nextcloud 25
     - nextcloud 26
     - nextcloud 27
     - nextcloud 28
     - nextcloud 29
     - nextcloud 30
+    - nextcloud 31
