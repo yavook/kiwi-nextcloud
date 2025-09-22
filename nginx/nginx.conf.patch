@@ -1,10 +1,11 @@
---- a/nginx.conf	2022-03-10 00:55:28.560012495 +0100
-+++ b/nginx.conf	2022-03-10 01:13:07.179416962 +0100
-@@ -27,9 +27,15 @@
-     #gzip  on;
+--- a/nginx.conf
++++ b/nginx.conf
+@@ -31,7 +31,13 @@
  
+     resolver 127.0.0.11 valid=2s;
      upstream php-handler {
--        server app:9000;
+         zone backends 64k;
+-        server app:9000 resolve;
 +        server 127.0.0.1:9000;
      }
  
@@ -15,5 +16,3 @@
 +    real_ip_recursive on;
 +
      server {
-         listen 80;
- 
