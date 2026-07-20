@@ -176,7 +176,7 @@ steps:
     - master
   settings:
     repo: yavook/kiwi-nextcloud
-    tags: 31
+    tags: 32
     username:
       from_secret: DOCKER_USERNAME
     password:
@@ -191,7 +191,7 @@ steps:
     - master
   settings:
     repo: yavook/kiwi-nextcloud
-    tags: 31
+    tags: 33
     username:
       from_secret: DOCKER_USERNAME
     password:
@@ -206,7 +206,7 @@ steps:
     - master
   settings:
     repo: yavook/kiwi-nextcloud
-    tags: 31
+    tags: 34
     username:
       from_secret: DOCKER_USERNAME
     password:
