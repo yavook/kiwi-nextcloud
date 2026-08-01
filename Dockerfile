@@ -7,7 +7,7 @@ LABEL maintainer="jmm@yavook.de"
 # https://github.com/just-containers/s6-overlay
 #########
 
-ARG S6_OVERLAY_VERSION=3.2.3.2
+ARG S6_OVERLAY_VERSION=3.2.2.0
 ENV PATH=/command:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 RUN set -ex; \
